@@ -1,0 +1,92 @@
+# default_view:
+#     view: yes
+#     name: Home
+#     icon: mdi:home
+#     entities:
+#       - group.living_room
+#
+# living_room:
+#   name: Living Room
+#   entities:
+#     - group.sonoff
+
+# system:
+#   name: Hassio Pi
+#   view: yes
+#   icon: mdi:raspberrypi
+#   entities:
+#     - group.cpu
+#     - group.disk
+#     - group.net
+
+cpu:
+  name: CPU
+  icon: mdi:memory
+  entities:
+    - sensor.processor_use
+    - sensor.load_1m
+    - sensor.load_5m
+    - sensor.load_15m
+    - sensor.memory_use_percent
+
+disk:
+  name: Disk
+  icon: mdi:harddisk
+  entities:
+    - sensor.disk_use_percent_
+    - sensor.swap_use_percent
+
+# net:
+#   entities:
+    # - sensor.ipv4_address_wlan0
+
+# climate:
+#   name: Climate
+#   view: yes
+#   icon: mdi:weather-pouring
+#   entities:
+#     - group.outside
+#     - group.inside
+
+outside:
+  name: Outside
+  icon: mdi:weather-pouring
+  entities:
+    - sensor.pws_alerts
+    - sensor.pws_temp_f
+    - sensor.pws_feelslike_f
+    - sensor.pws_temp_high_1d_f
+    - sensor.pws_relative_humidity
+    - sensor.pws_wind_dir
+    - sensor.pws_wind_mph
+
+inside:
+  name: Inside
+  icon: mdi:weather-pouring
+  entities:
+    - sensor.dht11_temperature
+    - sensor.dht11_humidity
+
+# gear:
+#   name: Gear
+#   view: yes
+#   icon: mdi:account-group
+#   entities:
+#     - group.phone
+#     - group.network
+
+# phone:
+#   name: Phone
+#   icon: mdi:phone
+#   entities:
+#     - device_tracker.jcariveau_droid
+#
+# network:
+#   name: Network
+#   icon: mdi:network
+#   entities:
+#     - device_tracker.brother_mfc
+#     - device_tracker.hassio
+#     - device_tracker.asus
+#     - device_tracker.toshiba
+#     - device_tracker.lenovo

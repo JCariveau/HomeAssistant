@@ -1,0 +1,53 @@
+- platform: group
+  name: "Lights"
+  entities:
+    - light.green_switch
+    - light.white_switch
+
+- platform: mqtt
+  name: "White Switch"
+  state_topic: "stat/sonoff1/POWER"
+  command_topic: "cmnd/sonoff1/POWER"
+  availability_topic: "tele/sonoff1/#"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: true
+
+- platform: mqtt
+  name: "Green Switch"
+  state_topic: "stat/sonoff2/POWER"
+  command_topic: "cmnd/sonoff2/POWER"
+  availability_topic: "tele/sonoff2/#"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: true
+
+- platform: mqtt
+  name: "Brown Switch"
+  state_topic: "stat/sonoff3/POWER"
+  command_topic: "cmnd/sonoff3/POWER"
+  availability_topic: "tele/sonoff3/#"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: true
+
+- platform: mqtt
+  name: "Purple Switch"
+  state_topic: "stat/sonoff4/POWER"
+  command_topic: "cmnd/sonoff4/POWER"
+  availability_topic: "tele/sonoff4/#"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: true
