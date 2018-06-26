@@ -112,6 +112,10 @@ panel_iframe:
     icon: mdi:database
     url: 'http://hassbian/phpliteadmin.php'
 
+  tasmoadmin:
+    title: 'TasmoAdmin'
+    url: 'http://hassbian/tasmoadmin/start'
+    
   # webmin:
   #   title: 'WebMin'
   #   icon: mdi:raspberrypi
