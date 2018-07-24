@@ -40,16 +40,17 @@ updater:
 # Discover some devices automatically
 discovery:
 
-# device_tracker:
+device_tracker:
+  - platform: owntracks
+    consider_home: 180
+    track_new_devices: no
 #   # - platform: bluetooth_tracker
 #   - platform: netgear
 #     host: 192.168.1.1
 #     username: !secret nguser
 #     password: !secret ngpass
 #     interval_seconds: 30
-#     consider_home: 180
-#     track_new_devices: no
-#   - platform: owntracks
+
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 # conversation:
@@ -73,7 +74,7 @@ recorder:
 logbook:
 
 # Enables a map showing the location of tracked devices
-# map:
+map:
 
 # Track the sun
 # sun:
@@ -88,6 +89,9 @@ tts:
 # Cloud
 # cloud:
 
+# media_player:
+#   - platform: pandora
+#
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

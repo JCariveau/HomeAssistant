@@ -1,0 +1,29 @@
+title: My Awesome Home
+# Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
+background: center / cover no-repeat url("/background.png") fixed
+# Exclude entities from "Unused entities" view
+excluded_entities:
+  # - weblink.router
+views:
+  - icon: mdi:home-assistant
+    # The cards to show on this view.
+    cards:
+      - type: entities
+        # Title of the entities card
+        title: Sonoff
+        # The entities here will be shown in the same order as specified.
+        # Each entry is an entity ID or a map with extra options.
+        entities:
+          - switch.sonoff_green
+          - switch.sonoff_white
+
+      - type: glance
+        entities:
+          - sensor.dht11_temperature
+          - sensor.dht11_humidity
+          
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: Lovelace
+        content: >
+          Welcome to your **Lovelace UI**.
