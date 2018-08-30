@@ -1,6 +1,6 @@
 title: My Awesome Home
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
-background: center / cover no-repeat url("/background.png") fixed
+#background: center / cover no-repeat url("/background.png") fixed
 # Exclude entities from "Unused entities" view
 excluded_entities:
   # - weblink.router
@@ -19,8 +19,8 @@ views:
 
       - type: glance
         entities:
-          - sensor.dht11_temperature
-          - sensor.dht11_humidity
+          - sensor.temperature
+          - sensor.humidity
           
         # The markdown card will render markdown text.
       - type: markdown
