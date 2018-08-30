@@ -1,4 +1,6 @@
 zone.home:
   radius: 75
-sensor.dht11_humidity:
+sensor.humidity:
   icon: mdi:water-percent
+device_tracker.vicpobrv_moto:
+  friendly_name: Jeff

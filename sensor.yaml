@@ -1,14 +1,17 @@
-- platform: wunderground
-  api_key: !secret wu_key
-  monitored_conditions:
-    - alerts
-    - temp_f
-    - feelslike_f
-    - temp_high_1d_f
-    - relative_humidity
-    - wind_dir
-    - wind_mph
+#- platform: wunderground
+#  api_key: !secret wu_key
+#  monitored_conditions:
+#    - alerts
+#    - temp_f
+#    - feelslike_f
+#    - temp_high_1d_f
+#    - relative_humidity
+#    - wind_dir
+#    - wind_mph
 
+#- platform: darksky
+#  apikey: !secret ds_key
+  
 # - platform: dht
 #   sensor: DHT11
 #   pin: 4
@@ -17,25 +20,25 @@
 #     - humidity
 
 - platform: mqtt
-  name: "DHT11 Temperature"
+  name: "Temperature"
   state_topic: "tele/sonoff-a/SENSOR"
   value_template: "{{ value_json['DHT11'].Temperature }}"
   unit_of_measurement: "°C"
 - platform: mqtt
-  name: "DHT11 Humidity"
+  name: "Humidity"
   state_topic: "tele/sonoff-a/SENSOR"
   value_template: "{{ value_json['DHT11'].Humidity }}"
   unit_of_measurement: "%"
 
-- platform: systemmonitor
-  resources:
-    - type: swap_use_percent
-    - type: disk_use_percent
-      arg: /
-    - type: memory_use_percent
-    - type: load_1m
-    - type: load_5m
-    - type: load_15m
+#- platform: systemmonitor
+#  resources:
+#    - type: swap_use_percent
+#    - type: disk_use_percent
+#      arg: /
+#    - type: memory_use_percent
+#    - type: load_1m
+#    - type: load_5m
+#    - type: load_15m
     # - type: ipv4_address
     #   arg: wlan0
-    - type: processor_use
+#    - type: processor_use
