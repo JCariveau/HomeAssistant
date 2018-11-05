@@ -45,13 +45,6 @@ device_tracker:
     max_gps_accuracy: 50
     consider_home: 100
     track_new_devices: no
-#   - platform: bluetooth_tracker
-#   - platform: netgear
-#     host: 192.168.1.1
-#     username: !secret nguser
-#     password: !secret ngpass
-#     interval_seconds: 30
-
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 # conversation:
@@ -61,7 +54,6 @@ history:
 
 recorder:
   purge_keep_days: 7
-  # db_url: mysql://hassio:FdzKPzFYMp0HlNIe@192.168.1.121:3306/hassio?charset=utf8
   include:
     domains:
       - device_tracker
@@ -79,7 +71,7 @@ logbook:
 # Enables a map showing the location of tracked devices
 map:
 # Track the sun
-# sun:
+sun:
 
 # Weather prediction
 weather:
@@ -89,6 +81,9 @@ weather:
 # sensors
 sensor: !include sensor.yaml
 
+# Binary sensors
+binary_sensor: !include binary_sensor.yaml
+
 # Text to speech
 tts:
   - platform: google
@@ -96,9 +91,6 @@ tts:
 # Cloud
 # cloud:
 
-# media_player:
-#   - platform: pandora
-#
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
@@ -112,28 +104,8 @@ mqtt:
 
 # light: !include switch.yaml
 
-panel_iframe:
-#  nodered_flows:
-#    title: 'Node-RED Flows'
-#    icon: mdi:nodejs
-#    url: 'http://192.168.1.149:1880'
-
-#  phpliteadmin:
-#    title: 'Database Admin'
-#    icon: mdi:database
-#    url: 'http://192.168.1.149/phpliteadmin.php'
-
-#  tasmoadmin:
-#    title: 'TasmoAdmin'
-#    icon: mdi:auto-fix
-#    url: 'http://192.168.1.149/tasmoadmin/start'
-
-  # webmin:
-  #   title: 'WebMin'
-  #   icon: mdi:raspberrypi
-  #   url: 'https://192.168.1.254:10000'
-
-  configurator:
-    title: 'Configurator'
-    icon: mdi:wrench
-    url: 'http://192.168.1.121:3218'
+#panel_iframe:
+  #configurator:
+    #title: 'Configurator'
+    #icon: mdi:wrench
+    #url: 'http://192.168.1.121:3218'

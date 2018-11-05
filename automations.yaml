@@ -1,11 +1,31 @@
-- alias: "Power state on HA start-up"
-  id: power_startup
-  hide_entity: True
+- id: power_startup
+  alias: Power state on HA start-up
   trigger:
+  - event: start
     platform: homeassistant
-    event: start
   action:
-    - service: mqtt.publish
-      data:
-        topic: "cmnd/sonoffs/power"
-        payload: ""
+  - data:
+      payload: '1'
+      topic: cmnd/sonoffs/restart
+    service: mqtt.publish
+  - data:
+      payload: ''
+      topic: cmnd/sonoffs/power
+    service: mqtt.publish
+  hide_entity: true
+- id: '1540548760601'
+  alias: BedRoomLightOff
+  trigger:
+  - entity_id: switch.sonoff_purple
+    for: 00:05
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.bed_room_pir
+    state: 'off'
+  action:
+  - data:
+      entity_id: switch.sonoff_purple
+    service: switch.turn_off

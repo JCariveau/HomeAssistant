@@ -1,0 +1,22 @@
+- platform: mqtt
+  name: "Living Room PIR"
+  state_topic: "tele/sonoff-a/SENSOR"
+  payload_on: "ON"
+  payload_off: "OFF"
+  # availability_topic: "home-assistant/window/availability"
+  # payload_available: "online"
+  # payload_not_available: "offline"
+  qos: 0
+  device_class: occupancy
+  value_template: '{{ value_json.Switch1 }}'
+- platform: mqtt
+  name: "Bed Room PIR"
+  state_topic: "tele/sonoff4/SENSOR"
+  payload_on: "ON"
+  payload_off: "OFF"
+  # availability_topic: "home-assistant/window/availability"
+  # payload_available: "online"
+  # payload_not_available: "offline"
+  qos: 0
+  device_class: occupancy
+  value_template: '{{ value_json.Switch1 }}'
