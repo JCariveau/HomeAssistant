@@ -6,7 +6,7 @@ views:
       - id: 1
         type: glance
         title: Tracking
-        column_width: calc(100% / 3)
+        columns: 3
         entities:
           - device_tracker.vicpobrv_moto
           - binary_sensor.bed_room_pir
@@ -15,7 +15,7 @@ views:
       - id: 2
         type: glance
         title: Switches
-        column_width: calc(100% / 3)
+        columns: 3
         entities:
           - entity: switch.sonoff_green
             tap_action: toggle
@@ -36,6 +36,6 @@ views:
           entity: sensor.temperature
           graph: line
 
-      - id: 3
+      - id: 5
         type: weather-forecast
         entity: weather.dark_sky

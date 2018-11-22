@@ -45,7 +45,14 @@ device_tracker:
     max_gps_accuracy: 50
     consider_home: 100
     track_new_devices: no
-
+  # - platform: life360
+  #   username: !secret life360_username
+  #   password: !secret life360_password
+  #   show_as_state: driving, moving, places
+  #   driving_speed: 12
+  #   max_gps_accuracy: 200
+  #   max_update_wait:
+  #     minutes: 45
 # Allows you to issue voice commands from the frontend in enabled browsers
 # conversation:
 
@@ -97,7 +104,7 @@ script: !include scripts.yaml
 
 mqtt:
   discovery: true
-  broker: mosquitto
+  broker: 192.168.1.101
   port: 1883
   username: !secret mqtt_user
   password: !secret mqtt_pass
